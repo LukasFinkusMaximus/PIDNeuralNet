@@ -15,7 +15,8 @@ public class NeuralNet
 	public double clcWeightSm (double[] score, double[] weights)
 	{
 		double weightedsum = 0;
-		for(double x=0; x < score.length; x++) weightedsum += score[(int) x]* weights [(int) x];
+		for(double x=0; x < score.length; x++) 
+			weightedsum += score[(int) x]* weights [(int) x];
 		return weightedsum;
 	}
 	public double applyActivation(double weightedsum)
@@ -30,7 +31,8 @@ public class NeuralNet
 	public double[] adjustWeights(double[] scores, double[] weights, double error)
 	{
 		double[] adjustedWeights = new double[weights.length];
-		for(int x=0; x < weights.length; x++) adjustedWeights[x] = LEARNING_RATE * error * scores[x] + weights [x];
+		for(int x=0; x < weights.length; x++) 
+			adjustedWeights[x] = LEARNING_RATE * error * scores[x] + weights [x];
 		return adjustedWeights;
 	}
 	public static double round(double value, int places) {
